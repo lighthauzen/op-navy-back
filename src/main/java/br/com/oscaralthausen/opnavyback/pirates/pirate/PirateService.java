@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class PirateService {
@@ -19,4 +20,10 @@ public class PirateService {
     }
 
     public List<Pirate> getAllPirates() {return pirateRepository.findAll();}
+
+    public Pirate createPirate(Pirate pirate) {
+        pirate.setId(UUID.randomUUID().toString());
+        Pirate createdPirate = pirateRepository.save(pirate);
+        return createdPirate;
+    }
 }

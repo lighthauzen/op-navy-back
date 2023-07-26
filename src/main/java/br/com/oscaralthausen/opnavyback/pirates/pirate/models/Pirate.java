@@ -16,7 +16,7 @@ public class Pirate {
    private String id;
    private String name;
    private Integer age;
-   private Long bounty;
+   private String bounty;
    private String origin;
    private String devilFruit;
    private String rank;
